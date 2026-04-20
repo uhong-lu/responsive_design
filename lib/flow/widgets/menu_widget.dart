@@ -6,7 +6,7 @@ class MenuWidget extends StatefulWidget {
   final int selectedIndex;
   final Function(int selectedIndex) onTapped;
 
-  MenuWidget({@required this.onTapped, this.selectedIndex});
+  MenuWidget({required this.onTapped, this.selectedIndex = 0});
 
   @override
   _MenuWidgetState createState() => _MenuWidgetState();
@@ -93,7 +93,8 @@ class _MenuWidgetState extends State<MenuWidget> {
             padding: const EdgeInsets.only(left: 16.0, top: 20.0, bottom: 20.0),
             child: Row(
               children: [
-                Icon(Icons.notifications, size: 24, color: CustomColors.neon_green),
+                Icon(Icons.notifications,
+                    size: 24, color: CustomColors.neon_green),
                 SizedBox(width: 16.0),
                 Expanded(child: TextViewMedium()),
               ],
@@ -168,7 +169,8 @@ class _ItemState extends State<Item> {
           children: [
             Icon(widget.icon, size: 24, color: CustomColors.neon_green),
             SizedBox(width: 16.0),
-            Text(widget.title, style: TextStyle(color: CustomColors.neon_green)),
+            Text(widget.title,
+                style: TextStyle(color: CustomColors.neon_green)),
           ],
         ),
       ),

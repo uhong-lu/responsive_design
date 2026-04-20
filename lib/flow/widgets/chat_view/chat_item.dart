@@ -19,8 +19,10 @@ class ChatItem extends StatelessWidget {
   final _randomCount = new Random();
   final _randomSide = new Random();
 
-  int getBubbleHeight() => minHeight + _randomHeight.nextInt(maxHeight - minHeight);
-  int getListItemCount() => minCount + _randomCount.nextInt(maxCount - minCount);
+  int getBubbleHeight() =>
+      minHeight + _randomHeight.nextInt(maxHeight - minHeight);
+  int getListItemCount() =>
+      minCount + _randomCount.nextInt(maxCount - minCount);
   int decideSide() => 0 + _randomSide.nextInt(2);
 
   @override
@@ -51,13 +53,15 @@ class ChatItem extends StatelessWidget {
                     child: ListView.separated(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
-                      separatorBuilder: (context, index) => SizedBox(height: 5.0),
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 5.0),
                       itemCount: getListItemCount(),
                       itemBuilder: (context, index) {
                         return Container(
                           height: getBubbleHeight().toDouble(),
                           decoration: BoxDecoration(
-                            color: CustomColors.blue_gray.withOpacity(0.3),
+                            color:
+                                CustomColors.blue_gray.withValues(alpha: 0.3),
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(bubbleRoundedRadius),
                               bottomRight: Radius.circular(bubbleRoundedRadius),
@@ -87,13 +91,15 @@ class ChatItem extends StatelessWidget {
                     child: ListView.separated(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
-                      separatorBuilder: (context, index) => SizedBox(height: 5.0),
+                      separatorBuilder: (context, index) =>
+                          SizedBox(height: 5.0),
                       itemCount: getListItemCount(),
                       itemBuilder: (context, index) {
                         return Container(
                           height: getBubbleHeight().toDouble(),
                           decoration: BoxDecoration(
-                            color: CustomColors.neon_green.withOpacity(0.3),
+                            color:
+                                CustomColors.neon_green.withValues(alpha: 0.3),
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(bubbleRoundedRadius),
                               bottomRight: Radius.circular(bubbleRoundedRadius),

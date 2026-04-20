@@ -17,13 +17,15 @@ class PeopleItem extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 16.0, right: 40.0),
+        padding: const EdgeInsets.only(
+            top: 8.0, bottom: 8.0, left: 16.0, right: 40.0),
         child: InkWell(
           onTap: () {
-            isNotInChatMode ??
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ChatPage(profileColor),
-                ));
+            if (isNotInChatMode) {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => ChatPage(profileColor),
+              ));
+            }
           },
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

@@ -4,7 +4,7 @@ import 'package:responsive_design/flow/widgets/people_view/people_item.dart';
 class PeopleList extends StatelessWidget {
   final bool isNotInChatMode;
 
-  PeopleList({this.isNotInChatMode});
+  PeopleList({this.isNotInChatMode = true});
 
   @override
   Widget build(BuildContext context) {

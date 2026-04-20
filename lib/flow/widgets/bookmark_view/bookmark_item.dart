@@ -13,7 +13,8 @@ class BookmarkItem extends StatelessWidget {
   static const int maxHeight = 250;
   static const double bubbleRoundedRadius = 20;
 
-  int getBubbleHeight() => minHeight + _randomHeight.nextInt(maxHeight - minHeight);
+  int getBubbleHeight() =>
+      minHeight + _randomHeight.nextInt(maxHeight - minHeight);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,8 @@ class BookmarkItem extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.only(top: 16.0, bottom: 8.0, left: 16.0, right: 8.0),
+        padding: const EdgeInsets.only(
+            top: 16.0, bottom: 8.0, left: 16.0, right: 8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -44,7 +46,7 @@ class BookmarkItem extends StatelessWidget {
                   Container(
                     height: getBubbleHeight().toDouble(),
                     decoration: BoxDecoration(
-                      color: profileColor.withOpacity(0.3),
+                      color: profileColor.withValues(alpha: 0.3),
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(bubbleRoundedRadius),
                         bottomRight: Radius.circular(bubbleRoundedRadius),
